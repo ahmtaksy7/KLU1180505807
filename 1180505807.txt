@@ -1,0 +1,36 @@
+Rastgele sayılardan oluşan bir dizi oluşturur. Ardından bu diziyi sıralar, belirli bir özelliğe göre dizi üzerinde işlem yapar ve sonuç olarak bir tam sayı döndürür. Bu tam sayıyı kullanarak, iki boyutlu bir matris üzerinde işlem yapar ve sonuç matrisi ekrana yazdırır.
+
+generate: Random sayılardan oluşan bir dizi oluşturur.
+function1: Diziyi kabarcık sıralaması kullanarak sıralar.
+function2: Dizideki ardışık pozitif sayıların toplamını bulur ve ardışık pozitif sayıların ortalamasını döndürür.
+function3: İki boyutlu bir matrisi (g) alır ve Floyd-Warshall algoritmasını kullanarak, matrisin tüm çiftler arasındaki en kısa yollarını bulur ve bu sonuçları başka bir matris (d) içinde saklar.
+
+
+
+Zaman Karmaşıklığı:
+
+generate: Bu fonksiyon A_SIZE (n) uzunluğundaki bir dizi oluşturur ve her elemana rastgele bir değer atar. Bu işlem, her elemana değer atandığı için O(n) zaman karmaşıklığına sahiptir.
+
+function1 (Bubble Sort): Bu fonksiyon, dizi boyutu n için O(n^2) zaman karmaşıklığına sahiptir. Kabarcık sıralaması, her bir elemanı karşılaştırarak ve gerektiğinde değiştirerek diziyi sıralar. İçteki döngü n-1 kez çalışır ve dıştaki döngü de n-1 kez çalışır, bu nedenle toplam işlem sayısı (n-1) * (n-1) ≈ n^2'dir.
+
+function2: Bu fonksiyon, dizideki ardışık pozitif sayıların toplamını ve ortalamasını hesaplar. Dizi boyutu n olduğu için ve her eleman sadece bir kez işlenir, bu fonksiyonun zaman karmaşıklığı O(n)'dir.
+
+function3 (Floyd-Warshall): Bu fonksiyon, iki boyutlu bir matris (g) alarak, Floyd-Warshall algoritması ile çiftler arasındaki en kısa yolları hesaplar ve bunları başka bir matris (d) içinde saklar. Algoritma, 3 iç içe geçmiş döngü kullanır ve her döngü G_SIZE (n) kez çalışır. Bu nedenle, zaman karmaşıklığı O(n^3)'tir.
+
+Toplam zaman karmaşıklığı, her bir fonksiyonun zaman karmaşıklığının toplamına eşittir: O(n) + O(n^2) + O(n) + O(n^3) ≈ O(n^3).
+
+Geliştirilmiş versiyon :
+
+function1 (Quick Sort veya Merge Sort): Kabarcık sıralamasının yerine daha hızlı bir sıralama algoritması kullanılabilir. Quick sort ve merge sort algoritmalarının ortalama ve en kötü durum zaman karmaşıklığı O(n log n)'dir.
+
+function3 (Dijkstra): Floyd-Warshall algoritması yerine Dijkstra algoritması kullanılabilir. Dijkstra algoritması, çiftler arasındaki en kısa yolları hesaplamak için O(n^2 log n) zaman karmaşıklığına sahiptir (özellikle ikili heap kullanarak).
+
+Toplam yeni zaman karmaşıklığı: O(n) + O(n log n) + O(n) + O(n^2 log n) ≈ O(n^2 log n). Bu, eski kodun zaman karmaşıklığı O(n^3) ile karşılaştırıldığında daha iyidir.
+
+Karşılaştırma:
+
+Eski kodun zaman karmaşıklığı: O(n^3)
+Yeni kodun zaman karmaşıklığı: O(n^2 log n)
+
+
+
